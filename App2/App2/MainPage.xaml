@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             xmlns:vm="clr-namespace:App2.sub"
+             x:Class="App2.MainPage"
+             >
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:TimeConverter x:Key="timeConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!--<Label BindingContext="{x:Static local:App.Date}" Text="{Binding StringFormat='{0:HH:mm}'}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />-->
+
+
+    <Label BindingContext="{x:Static local:App.Date}" Text="{Binding Converter={StaticResource timeConverter}}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+
+    <!--<ContentPage.BindingContext>
+        <vm:DateVM />
+    </ContentPage.BindingContext>
+
+    <Label Text="{Binding Date, StringFormat='{0:HH:mm}'}" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" >
+    </Label>-->
+
+</ContentPage>
